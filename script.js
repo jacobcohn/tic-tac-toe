@@ -69,11 +69,20 @@ const gameDisplay = (() => {
             return playerX;
         } else return playerO;
     };
+
     const nextPlayer = () => {
         if (currentPlayer() == playerX) {
             return playerO;
         } else return playerX;
     };
+
+    let switchWhoStartsVariable = 0;
+    const switchWhoStarts = () => {
+        if (switchWhoStartsVariable % 2 == 0) {
+            currentPlayerVariable = 1;
+        } else currentPlayerVariable = 0;
+    };
+
 
     gameElementDivs.forEach(item => {
         item.addEventListener('click', e => {
@@ -83,7 +92,6 @@ const gameDisplay = (() => {
                 } else {
                     currentPlayer().addMove(e.target.getAttribute('value'), currentPlayer().team);
                     e.target.classList.toggle('taken');
-                    // turnTitle.innerHTML = 'Player ' + nextPlayer().team + '\'s Turn';
                     currentPlayerVariable++;
                 }
             } else {
@@ -131,6 +139,7 @@ const gameDisplay = (() => {
     gameBtn.addEventListener('click', () => {
         xScore = 0;
         oScore = 0;
+        switchWhoStartsVariable = 0;
         gameController.reset();
     })
 
@@ -141,6 +150,9 @@ const gameDisplay = (() => {
             }
         })
         roundBtn.innerHTML = 'Reset Round';
+        switchWhoStartsVariable++;
+        switchWhoStarts();
+        turnTitle.innerHTML = 'Player ' + currentPlayer().team + '\'s Turn';;
         displayGameArray();
     };
 
