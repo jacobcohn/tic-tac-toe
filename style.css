@@ -1,49 +1,101 @@
 body {
-    background-color: beige;
-    padding: 0px;
+    background-color: #aad8d3;
+    color: #393e46;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 
 #container {
-    width: 95vw;
-    height: 95vh;
-    margin: auto;
+    width: 99vw;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 550px 1fr;
-    grid-template-rows: 1fr 1fr 550px 1fr 1fr;
+    grid-template-columns: 1fr 300px 550px 1fr;
+    grid-template-rows: 1fr 9fr;
 } 
 
+
 #titleDiv {
-    grid-area: 1 / 1 / 2 / 4;
+    grid-area: 1 / 1 / 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#turnDiv {
-    grid-area: 2 / 1 / 3 / 4;
+#title {
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
-#playerXScoreDiv {
-    grid-area: 3 / 1 / 4 / 2;
+
+#sidebarBigDiv {
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 20px 15px 0px 15px;
+    
 }
 
-#playerOScoreDiv {
-    grid-area: 3 / 3 / 4 / 4;
+#sidebarSmallDiv {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding: 10px 15px 20px 15px;
 }
 
-#gameContainer {
-    grid-area: 3 / 2 / 3 / 4;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);;
-    width: 500px;
-    height: 500px;
+#turnTitle {
+    font-size: 35px;
+    margin: 10px 0px 10px 0px;
 }
 
-.gameElementDiv {
-    background-color: aliceblue;
-    width: 100%;
-    height: 100%;
-    border: black solid 2px;
+.playerScoreElements {
+    font-size: 25px;
+    margin: 10px 0px 10px 0px;
 }
 
 #btnsDiv {
-    grid-area: 4 / 2 / 5 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    width: 90%;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#gameContainer {
+    grid-area: 2 / 3 / 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px;
+    width: 500px;
+    height: 500px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.gameElementDiv {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.gameElementDiv:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.gameElementP {
+    color: #393e46;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 140px;
+    margin: 0px;
+    text-align: center;
 }

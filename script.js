@@ -79,8 +79,8 @@ const gameDisplay = (() => {
     let switchWhoStartsVariable = 0;
     const switchWhoStarts = () => {
         if (switchWhoStartsVariable % 2 == 0) {
-            currentPlayerVariable = 1;
-        } else currentPlayerVariable = 0;
+            currentPlayerVariable = 0;
+        } else currentPlayerVariable = 1;
     };
 
 
@@ -104,8 +104,8 @@ const gameDisplay = (() => {
         gameElementPs.forEach(item => {
             item.innerHTML = gameArray[gameElementPs.findIndex(element => element == item)];
         })
-        playerXScoreElement.innerHTML = xScore;
-        playerOScoreElement.innerHTML = oScore;
+        playerXScoreElement.innerHTML = 'Player X\'s Score: ' + xScore;
+        playerOScoreElement.innerHTML = 'Player O\'s Score: ' + oScore;
     }
 
     const updateScore = (result) => {
