@@ -79,8 +79,8 @@ const gameDisplay = (() => {
     let switchWhoStartsVariable = 0;
     const switchWhoStarts = () => {
         if (switchWhoStartsVariable % 2 == 0) {
-            currentPlayerVariable = 0;
-        } else currentPlayerVariable = 1;
+            currentPlayerVariable = 1;
+        } else currentPlayerVariable = 0;
     };
 
 
